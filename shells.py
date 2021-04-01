@@ -40,7 +40,9 @@ Fz = W(u)*np.sin(v) + H*(u/(2*np.pi))**P
 
 
 
-app = dash.Dash()
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
+app.title='SeaShells'
 
 app.layout = html.Div([
     dcc.Graph(id='graph-shell'),
