@@ -108,4 +108,4 @@ def update_figure(wave_freq,num_turns,height,wave_amp):
 
 
 
-app.run_server(debug=True, use_reloader=False)
+app.run_server(debug=True)
