@@ -40,7 +40,7 @@ Fz = W(u)*np.sin(v) + H*(u/(2*np.pi))**P
 
 
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__)
 server = app.server
 app.title='SeaShells'
 
