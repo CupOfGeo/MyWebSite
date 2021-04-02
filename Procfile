@@ -1,1 +1,1 @@
-web: gunicorn shells:server
+web: gunicorn navbar:server
