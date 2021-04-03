@@ -32,13 +32,6 @@ R=.5    # radius of tube
 def W(u):
     return (u/(2*np.pi)*R)
 
-
-'''Fx = W(u)*np.cos(N*u)*(1+np.cos(v))
-Fy = W(u)*np.sin(N*u)*(1+np.cos(v))
-Fz = W(u)*np.sin(v) + H*(u/(2*np.pi))**P
-'''
-
-
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 # app = dash.Dash(__name__, external_stylesheets=external_stylesheets)

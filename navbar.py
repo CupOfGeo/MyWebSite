@@ -11,7 +11,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from app import server
 from app import app
-from apps import shells, attractors
+from apps import shells, attractors, more_attractors
 import base64
 
 
@@ -36,6 +36,7 @@ dropdown = dbc.DropdownMenu(
     children=[
         dbc.DropdownMenuItem("Sea Shells",href="/shell"),
         dbc.DropdownMenuItem("Lorenz Attractors",href="/lorenz"),
+        dbc.DropdownMenuItem("More Attractors",href="/attractors"),
         dbc.DropdownMenuItem(divider=True),
         dbc.DropdownMenuItem("Coming soon"),
     ],
@@ -111,6 +112,8 @@ def display_page(pathname):
         return shells.layout
     elif pathname == '/lorenz':
         return attractors.layout
+    elif pathname == '/attractors':
+        return more_attractors.layout
     else:
         return shells.layout
 

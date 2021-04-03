@@ -1,0 +1,81 @@
+
+Blending images
+  image1 = Image.open("demo3_1.jpg")
+  image2 = Image.open("demo3_2.jpg")
+
+  # Create a new image which is the half-way blend of image1 and image2
+  # The "0.5" parameter denotes the half-way point of the blend function.
+  images1And2 = Image.blend(image1, image2, 0.5)
+
+  # Save the resulting blend as a file
+  images1And2.save("demo3_3.jpg")
+
+
+
+big_cmaps = ['viridis', 'plasma', 'inferno', 'magma', 'cividis',
+            'binary', 'gist_yarg', 'gist_gray', 'gray', 'bone', 'pink',
+            'spring', 'summer', 'autumn', 'winter', 'cool', 'Wistia',
+            'hot', 'afmhot', 'gist_heat', 'copper','Greys', 'Purples', 'Blues', 'Greens', 'Oranges', 'Reds',
+            'YlOrBr', 'YlOrRd', 'OrRd', 'PuRd', 'RdPu', 'BuPu',
+            'GnBu', 'PuBu', 'YlGnBu', 'PuBuGn', 'BuGn', 'YlGn',
+            'PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu',
+            'RdYlBu', 'RdYlGn', 'Spectral', 'coolwarm', 'bwr', 'seismic',
+            'twilight', 'twilight_shifted', 'hsv',
+            'flag', 'prism', 'ocean', 'gist_earth', 'terrain', 'gist_stern',
+            'gnuplot', 'gnuplot2', 'CMRmap', 'cubehelix', 'brg',
+            'gist_rainbow', 'rainbow', 'jet', 'turbo', 'nipy_spectral',
+            'gist_ncar']
+
+
+
+cmaps['Perceptually Uniform Sequential'] = [
+            'viridis', 'plasma', 'inferno', 'magma', 'cividis']
+
+cmaps['Sequential'] = [
+            'Greys', 'Purples', 'Blues', 'Greens', 'Oranges', 'Reds',
+            'YlOrBr', 'YlOrRd', 'OrRd', 'PuRd', 'RdPu', 'BuPu',
+            'GnBu', 'PuBu', 'YlGnBu', 'PuBuGn', 'BuGn', 'YlGn']
+
+
+cmaps['Sequential (2)'] = [
+            'binary', 'gist_yarg', 'gist_gray', 'gray', 'bone', 'pink',
+            'spring', 'summer', 'autumn', 'winter', 'cool', 'Wistia',
+            'hot', 'afmhot', 'gist_heat', 'copper']
+
+cmaps['Diverging'] = [
+            'PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu',
+            'RdYlBu', 'RdYlGn', 'Spectral', 'coolwarm', 'bwr', 'seismic']
+
+cmaps['Cyclic'] = ['twilight', 'twilight_shifted', 'hsv']
+
+cmaps['Miscellaneous'] = [
+            'flag', 'prism', 'ocean', 'gist_earth', 'terrain', 'gist_stern',
+            'gnuplot', 'gnuplot2', 'CMRmap', 'cubehelix', 'brg',
+            'gist_rainbow', 'rainbow', 'jet', 'turbo', 'nipy_spectral',
+            'gist_ncar']
+
+
+
+
+
+#MP4
+list_gen = []
+
+for i in range(0, 50):
+    i = str(i)
+    if len(i) <= 1:
+        i = str(f'images/00{i}.png')
+        list_gen.append(i)
+    else:
+        i = str(f'images/0{i}.png')
+        list_gen.append(i)
+
+import os
+import moviepy.video.io.ImageSequenceClip
+image_folder='images'
+fps=10
+
+image_files = [image_folder+'/'+img for img in os.listdir(image_folder) if img.endswith(".png")]
+clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(list_gen, fps=fps)
+
+clip.write_videofile('my_video.mp4')
