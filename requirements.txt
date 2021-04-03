@@ -9,7 +9,7 @@ dash-core-components==1.15.0
 dash-html-components==1.1.2
 dash-renderer==1.9.0
 dash-table==4.11.2
-dask==2021.4.0
+dask==2021.2.0
 datashader==0.12.1
 datashape==0.5.2
 distributed==2021.4.0
