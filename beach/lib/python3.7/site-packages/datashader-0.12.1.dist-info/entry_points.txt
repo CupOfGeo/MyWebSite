@@ -1,3 +1,0 @@
-[console_scripts]
-datashader = datashader.__main__:main
-
