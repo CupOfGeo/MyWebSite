@@ -6,6 +6,7 @@ import numpy as np
 from PIL import Image
 import pandas as pd
 from app import app
+import resource
 
 from cliff_attractor import gen_random, make_pretty
 
@@ -129,7 +130,7 @@ layout = html.Div([
 def update_output(value):
     vals, df = gen_random()
     print('input:', value)
-
+    print('ram?', resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
     return vals, df.to_json(date_format='iso', orient='split')
 
 

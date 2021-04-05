@@ -13,7 +13,7 @@ palette["inferno"]=inferno
 
 @jit(nopython=True)
 def Clifford(x, y, a, b, c, d, *o):
-    return sin(a * y) + c * cos(a * x), sin(b * x) + d * cos(b * y)
+    return np.sin(a * y) + c * np.cos(a * x), np.sin(b * x) + d * np.cos(b * y)
 
 
 n=10000000
