@@ -3,8 +3,9 @@ from datashader import transfer_functions as tf
 from datashader.colors import inferno, viridis
 from numba import jit
 from math import sin, cos, sqrt, fabs
-
+import numpy.random
 from PIL import Image
+import xarray as xr
 
 from colorcet import palette
 palette["viridis"]=viridis
@@ -51,45 +52,65 @@ def init_plot(fn, vals, n=n, cmap=viridis, label=True):
     df  = trajectory(fn, *vals, n=n)
     cvs = ds.Canvas(plot_width = 500, plot_height = 500)
     agg = cvs.points(df, 'x', 'y')
-    img = tf.shade(agg, cmap=cmap, name=lab)
-    return img, agg ,df
+    return agg
 
 
-import numpy.random
 
+#finds some nice inital conditions thats it
 def gen_random():
     im = [0]
     empty_min=249200
     empty = 250001
     func = Clifford#Symmetric_Icon#De_Jong#Svensson
-
     #how intresting/colorful #1e12 lower limit
     while empty > empty_min:#np.array(im).sum() < 1e12:
       rvals=np.c_[np.zeros((1,2)), numpy.random.random((1,6))*4-2]
       #rvals = np.c_[np.ones((num,2))*0.01, numpy.random.random((num,6))*4-2]
       #print(rvals[0])
       vals = list(rvals[0])
-      im, a, df = init_plot(func, rvals[0], n=2000)
-      print('loop', np.count_nonzero(np.array(im)==0))
-      empty = np.count_nonzero(np.array(im)==0)
+      agg = init_plot(func, rvals[0], n=2000)
+      print('loop', np.count_nonzero(np.array(agg.values)==0))
+      empty = np.count_nonzero(np.array(agg.values)==0)
     #con = np.count_nonzero(im==0)
     #print(np.array(im).max())
-    return rvals[0], df
+    return rvals[0]
 
-def make_pretty(color, vals, df):
+
+#take inital conditions and makes a nice agg
+def make_detailed(vals, n=n, cmap=viridis, label=True):
+    """Return a Datashader image by collecting `n` trajectory points for the given attractor `fn`"""
+    imgs = []
+    m = 1000000
+    vals[0] = 0
+    vals[1] = 0
+    cvs = ds.Canvas(plot_width = 500, plot_height = 500)
+    agg_sum = 0
+    #for i in np.geomspace(200, m, 100).astype(int):
+    for i in range(100):
+      #print(i)
+      lab = ("{}, "*(len(vals)-1)+" {}"+' n:'+str((1+i)*m)).format(*vals) if label else None
+      df  = trajectory(Clifford, *vals, n=m)
+      vals[0] = df.iloc[m-1].x
+      vals[1] = df.iloc[m-1].y
+
+      agg = cvs.points(df, 'x', 'y')
+      agg_sum = agg.values + agg_sum
+      #imgs.append(tf.shade(agg, cmap=color_map, name=lab)) #palette[color_map]
+      #imgs.append(tf.shade(xr.DataArray(agg_sum), cmap=palette['fire'], name=lab)) #palette[color_map]
+
+    return xr.DataArray(agg_sum)#imgs
+
+
+def make_pretty(color, vals, agg):
+    if vals == '': #or agg == None
+        vals = gen_random()
+        agg = make_detailed(Clifford, vals)
+    if color == '':
+        color = 'fire'
     lab = ("{}, "*(len(vals)-1)+" {}").format(*vals) if vals else None
-    if len(df) == 0 or len(df) == 2000:
-        img, a, df = init_plot(Clifford, vals, n=100000000, cmap=palette[color])
-    else:
-        cvs = ds.Canvas(plot_width = 500, plot_height = 500)
-        agg = cvs.points(df, 'x', 'y')
-        img = tf.shade(agg, cmap=palette[color], name=lab)
-        a = agg
-
-    im = tf.set_background(img,'black')
-
-    return im, a , df
-
+    img = tf.shade(xr.DataArray(agg), cmap=palette[color], name=lab)
+    img = tf.set_background(img,'black')
+    return img
 
 
 #vals = gen_random()

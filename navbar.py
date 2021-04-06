@@ -36,7 +36,7 @@ dropdown = dbc.DropdownMenu(
     children=[
         dbc.DropdownMenuItem("Sea Shells",href="/shell"),
         dbc.DropdownMenuItem("Lorenz Attractors",href="/lorenz"),
-        #dbc.DropdownMenuItem("More Attractors",href="/attractors"),
+        dbc.DropdownMenuItem("More Attractors",href="/attractors"),
         dbc.DropdownMenuItem(divider=True),
         dbc.DropdownMenuItem("Coming soon"),
     ],
@@ -112,8 +112,8 @@ def display_page(pathname):
         return shells.layout
     elif pathname == '/lorenz':
         return attractors.layout
-    #elif pathname == '/attractors':
-        #return more_attractors.layout
+    elif pathname == '/attractors':
+        return more_attractors.layout
     else:
         return shells.layout
 

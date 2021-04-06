@@ -8,7 +8,7 @@ import pandas as pd
 import json
 import requests
 #import resource
-from app import app
+
 from cliff_attractor import gen_random, make_pretty, make_detailed
 
 big_cmaps = ['CET_C5',
@@ -93,9 +93,9 @@ big_cmaps = ['CET_C5',
 
 
 
+app = dash.Dash(__name__)
 
-
-layout = html.Div([
+app.layout = html.Div([
     #,style={'width': '80vh', 'height': '80vh'}),
     html.Img(id='frac'),
     html.Button('New Attractor', id='submit-val', n_clicks=0),
@@ -137,3 +137,10 @@ def color_figure(color, vals, agg):
     agg = eval(agg)
     out = make_pretty(color, vals, agg).to_pil()
     return out
+
+
+
+
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
