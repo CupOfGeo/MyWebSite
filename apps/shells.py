@@ -1,11 +1,12 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 #http://xahlee.info/SpecialPlaneCurves_dir/Seashell_dir/seashell_math_formulas.html
-
+#By Xah Lee.
 # Equation of ring cyclide
 # see https://en.wikipedia.org/wiki/Dupin_cyclide
 import numpy as np
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 
 
 #fig = go.Figure() # or any Plotly Express function e.g. px.bar(...)
@@ -41,6 +42,32 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 from app import app
 
 layout = html.Div([
+
+    dbc.Container([
+        dbc.Row([
+            dbc.Col(
+                html.H5("This euqation is the work of Xah Lee and Mike Willams go check out the orginal work at http://xahlee.info/SpecialPlaneCurves_dir/Seashell_dir/seashell_math_formulas.html")
+                , className="mb-5 mt-5"),
+#html.A("here",href="http://xahlee.info/SpecialPlaneCurves_dir/Seashell_dir/seashell_math_formulas.html")
+        ]),
+
+        dbc.Row([
+            dbc.Col(html.H5(children="They are made with 3 parametric equations that plot the shell a surface and a small function")
+                    , className="mb-4")
+            ]),
+    ]),
+    html.Div(children='''
+
+
+    
+
+    W(u) = (u/(2*pi)*R)
+
+    Fx = W(u)*cos(N*u)*(1+cos(v)+cos(F*u)*A)
+    Fy = W(u)*sin(N*u)*(1+cos(v)+cos(F*u)*A)
+    Fz = W(u)*sin(v) + H*(u/(2*pi))**P
+
+    '''),
     dcc.Graph(id='graph-shell'),
     html.P('wave frequency'),
     dcc.Slider(
@@ -63,13 +90,28 @@ layout = html.Div([
         max=5,
         value=2,
         step=.5),
+    html.P('power'),
+    dcc.Slider(
+        id='power-slider',
+        min=.5,
+        max=3,
+        value=1.9,
+        step=.1),
     html.P('wave amplitude'),
     dcc.Slider(
         id='wave-slider',
         min=0,
         max=1,
         value=.2,
-        step=.1)
+        step=.1),
+    html.Div(children='''
+    This porject was inspired by my love of shells and the beach. One of the
+    running jokes of my comp sci carrer is that when people asked me what I want
+    to do after college I would always respond. I wanna sell sea shells by the
+    seashore. I never found out what I wanna do at Bucknell but I what I love
+    and that was learning math and science, building with computers and helping
+    others how ever I can.
+    ''')
     ])
 
 @app.callback(
@@ -77,14 +119,15 @@ layout = html.Div([
     Input('wave-freq-slider', 'value'),
     Input('turns-slider', 'value'),
     Input('height-slider', 'value'),
-    Input('wave-slider','value'))
+    Input('wave-slider','value'),
+    Input('power-slider','value'))
 
-def update_figure(wave_freq,num_turns,height,wave_amp):
+def update_figure(wave_freq,num_turns,height,wave_amp,pow):
     N=num_turns  # number of turns
     H=height  # height
     F=wave_freq   # wave frequency
     A=wave_amp  # wave amplitude
-    P=1.9  # power
+    P=pow  # power
 
     Fx = W(u)*np.cos(N*u)*(1+np.cos(v)+np.cos(F*u)*A)
     Fy = W(u)*np.sin(N*u)*(1+np.cos(v)+np.cos(F*u)*A)

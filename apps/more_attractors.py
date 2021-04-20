@@ -12,8 +12,6 @@ from app import app
 from cliff_attractor import gen_random, make_pretty, make_detailed
 
 big_cmaps = ['CET_C5',
- 'CET_C5s',
- 'CET_C1',
  'CET_C1s',
  'CET_C2',
  'colorwheel',
@@ -34,26 +32,18 @@ big_cmaps = ['CET_C5',
  'CET_D3',
  'gwv',
  'CET_D12',
- 'Diverging_isoluminant_cjm_75_c24',
+ 'diverging_isoluminant_cjm_75_c24',
  'CET_D11',
  'CET_D8',
  'bjy',
  'bwy',
  'CET_R3',
  'cwr',
- 'glasbey_bw',
- 'glasbey',
- 'glasbey_cool',
- 'glasbey_warm',
- 'glasbey_dark',
- 'glasbey_light',
- 'glasbey_category10',
- 'glasbey_hv',
  'CET_I1',
  'isolum',
  'CET_I3',
  'bgy',
- 'Linear_bgyw_15_100_c67',
+ 'linear_bgyw_15_100_c67',
  'bgyw',
  'CET_L9',
  'kbc',
@@ -67,7 +57,6 @@ big_cmaps = ['CET_C5',
  'kgy',
  'gray',
  'dimgray',
- 'kbc',
  'CET_L16',
  'kgy',
  'CET_L4',
@@ -97,6 +86,16 @@ big_cmaps = ['CET_C5',
 
 layout = html.Div([
     #,style={'width': '80vh', 'height': '80vh'}),
+    html.Div(children='''
+    Welcome, please wait for your attractor to generate before clicking the
+    button or dropdown if one doesnt generate in 30 second you may try clicking
+    the button this page is a work in progress!
+
+    The base code is from Lázaro Alonso
+    https://lazarusa.github.io/Webpage/index.html
+    I didnt see any place for less technical people to generate and
+    color there own attractors and wanted to share with my sisters and friends 
+    '''),
     html.Img(id='frac'),
     html.Button('New Attractor', id='submit-val', n_clicks=0),
     dcc.Dropdown(
@@ -107,8 +106,33 @@ layout = html.Div([
 
 
     html.Div(id='inital-params',children='',style={'display': 'none'}),
-    html.Div(id='agg-params',children='',style={'display': 'none'})
+    html.Div(id='agg-params',children='',style={'display': 'none'}),
+    html.Div(children='''
+    This program uses the Clifford formula
+    x = sin(a * y) + c * np.cos(a * x)
+    y = np.sin(b * x) + d * np.cos(b * y)
 
+    fractles work by you starting with some inital conditions
+    I start with x[0] and y[0] = 0
+    and 4 other parameters a,b,c, and d.
+
+    then with the intial conditions and the other 4 paraments they are put into
+    this equation and then you get a new value for x and y and then you take
+    your new result and feed that again into the Clifford equation. the fracles
+    you see here are run throught this equation 100,000,000 times.
+
+    I set these with random numbers and then do a little bit of extra math find
+    paramets that generate what i think are more intresting/pretty fracels. I also
+    do some fancy math to compute them more effecently as they are easy and
+    quick to calculate but become very spacous and quick very fast. So i had to
+    move the computation off heroku who im using to host this site and trn it
+    into a google cloud function api call where i can give it a little more ram.
+
+    I want people to be able to generate and color there own fracles and admire
+    there beauty as i do with every one.
+
+
+    '''),
 ])
 
 @app.callback(
@@ -123,6 +147,7 @@ def new_frac(value):
     #agg = make_detailed(vals)
     str_vals = str(vals[:])[1:-1].replace(', ','#')
     x = requests.get('https://us-central1-atrractors.cloudfunctions.net/function-1?message='+str_vals)
+    print(str_vals)
     agg = eval(x.text)
 
 

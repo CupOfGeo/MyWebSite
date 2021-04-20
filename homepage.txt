@@ -1,0 +1,219 @@
+Welcome friends family and possible future friends. I'm having a great time in
+Chicago right now all is good. I hope you enjoy my page
+
+the last time i ever buy a piece of paper that says i learned something. You thought i would have learned that by now.
+
+#https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/31522979
+
+Currently working on:
+For this page:
+  Integrating my style transfer GANs into this page
+  Integrate GTP2 writing rick and morty transcripts
+  Fix Clifford attractors api and add more equations
+Kaggle:
+  Coleridge Initiative - Show US the Data
+
+
+Current Course:
+  Andrew Ng's ML
+  https://www.coursera.org/learn/machine-learning
+
+  Building Modern Python Applications on AWS
+  https://www.coursera.org/learn/building-modern-python-applications-on-aws
+
+
+Current Book:
+  The Art Of Thinking Clearly
+  Genius Makers
+
+
+Projects sitting on the shelf that i have to get back to:
+  Rick and Morty Voice cloning with speech brain library
+
+
+Outside of computers I have been learning guitar and enjoy long boarding on
+sunny days
+
+
+For those who don't know me. Hello and welcome I'm George the developer of this page.
+I love python. all the code that i write for this page and all apis are in python
+(all the html js sql is actually just in my python code so i don't count it).
+I'm using Plotlys Dash to make this page. I love giving people the opportunity
+to interact with the math and code them selfs so they can have a better intuition
+about whats actually happening other than just looking and some words or plots.
+I originally got the idea in my image processing class where I would add sliders
+and widgets to my labs (which was really easy to do with matplotlib) and it would
+make them 100 times cooler. Currently Im very focused on ML/AI and data science
+I find a lot of beauty in chaos and information theory so I like all kinda of data.
+I want this page to be an interactive gallery for my cooler projects. I do other
+project that will not bring to this page as i don't think they will gain any
+value being here.
+
+
+Education
+I always exceled a math from a very early age but i also very below average in english.
+I remember in elementary school when I first got a graphing calculator. It was magical and i loved it.
+Me and a handful of other where bussed to the highschool to take math with the older kids.
+(But i was also put in english classes with the younger kids).
+On the bus I was always graphing crazy equations that would draw bridges and
+cars and pretty designs.
+In my sophtomre year of highschool i got to take my first computer programming classe
+it was in Visual Basic and was taught by one of the best teachers i ever had Ms. Rose Panarrele
+I got to take another 5 classes with her 2 in networking and 3 in computer Science.
+i was always giving up my lunch to take classes because i thought they were cool.
+I got to take marine biology, phycology, economics. But I my favorite classes
+where Science, Computer science, and Math. So I went to collage for Computer Science.
+
+I am a Computer Science and Engineering graduate of Bucknell University. I have
+a minor in Physics and Math. I always thought of comp sci's as math majors with
+just really big calculators. Honestly I wish I was a Physics major. One day would
+like to go back to school for physics. I took the basic physics into classes, then
+classical Mechanics, wave Mechanics and applied electronic circuits. Wave Mechanics
+was one of my favorite classes at Bucknell. Math I took Stats Probability, Linear Algebra,
+Numerical Analysis and Calculus. My favorite class was Clac three i always loved
+graphing the different curves, vector fields and surfaces. I tried to take as many
+math physics and comp sci classes as i could which was a wonderful thing.
+My grades were not even B's in some of them but i loved them. I never cared as
+much as my peers about my grades because i was taking some really hard classes
+and that i couldn't get an A in all of them at the same time and that was just
+ok with me. I wanted to take it all but you can't. What i did learn is that what
+really makes the course isn't the material but its the professor and i was
+blessed to have awesome professors. It wasn't until senior year that i got to
+take actual fun cs classes. I got to take Intro to AI, Image processing,
+Intro to Data Mining. I loved it so much a friend and I started a machine learning
+club. So today I'm still taking Ai and machine learning courses
+and doing machine learning projects. I was always a nerd who like my classes a
+little too much. I was on the Association for Computing Machinery (ACM) exec
+team junior year and senior year when I became vice president. I still wanted to
+give more talks about coding then anyone even the exec board wanted to hear
+about. My most succesul talk was a code tutorial on
+building a tic tak toe with sockets so that you can play against your friends wirelessly
+over the network.
+
+It wasn't until senior year of collage that would i read my first book (without it
+being for some class). It was Surely You're Joking, Mr. Feynman! and it is still
+my favorite book. Richard Feynman is my favorite science. I remember hearing about
+the Feynman method for learning that the best way to learn was to teach. I took
+that to heart i would always hold study session where i would go through the
+the material on the exam like i was the professor it was really easy to see what
+I actually knew, what I thought I knew, and what i didn't have the slightest clue about.
+My classmates always thought i was so helpful. What they didn't know was i was
+actually using them and that they and them challenging my knowlage was so helpful.
+Now i love to read!! My favorite subjects to read about is physics and information theory.
+
+Books i have reading
+Surely You're Joking, Mr. Feynman!
+Sapiens
+Outliers
+The grand design
+Nine pints by Rose George
+The 7 habits of highly effective people
+chaos by james gleick
+Influence Science and Practice by Robert Cialdini
+QED by Feynman
+What do you care what other people think by Feynman
+Astrophysics for people in a hurry by Tyson
+Talking to stranger by Gladwell
+Red Notice by Bill Browder
+The Code Book by Simon Singh
+Everybody Lies by Seth Stephens-Davidowitz
+Naked Statistics by Charles Wheelan
+Range by David Epstine
+the Signal and the Noise by Nate Silver
+The Physics of Wall street James Owen Weatherall
+David and Goliath Malcum
+Programming the Universe Seth Lloyd
+Lost in Math Sabine Hossenfelder
+
+
+
+
+
+For my first time chunk I have been taking Coursera Andrew Ng's ML class and its
+wonderful! I'm planning on buying the certification for ($80) after I finish as
+I am currently living off my stimulus check and previous savings. I do not have
+$150 right now to spend on another course and then another $100 to take a the
+TensorFlow certification exam. I'm on week 4 of 11 and plan on finishing it
+before the end of April. I spend at least 1 hour a day on it.I only have a set
+minimum time for each thing as some days i will spend many many hours on a
+single thing or more evenly divide my time between two or three.
+
+My next time chunk I have been working on a deep learning project to clone the
+voice and language style of one of my favorite cartoon characters Rick Sanchez
+from the tv cartoon Rick and Morty. I chose this project because I have done
+natural language processing NLP and computer vision image processing projects
+but I have never worked with audio data before. I'm currently working on the sub
+problem where I have half the transcripts labeled with which character is
+speaking and the other half have no labels. I'm solving this problem with deep
+learning libraries Speech Brain. I spend at least 2 hours a day on this project.
+
+For my third time chunk I was have just complete working on a python project on
+information theory. I named the project YoungThorp after Edward O. Thorp. It is
+about keeping a perfect information and playing perfect blackjack. it would
+decide the optimal move to hit or stand. No heuristic purely probability and
+statistics, by calculating each cards worth of information. It actually worked
+in simulations having a positive expected value, which mean theoretically it is
+profitable. This is obviously a violation of any casinos terms of service and I
+have no intention of using it. I also don't want it to come off that Im a
+gambler as I am not. Without sounding too pretentious, I'm too smart to gamble
+as I know that all the bets are rigged.
+
+I just got the idea from the book The Physics of Wall Street by James Owen
+Weatherall. Which talks about Thorp and his contributions in information theory.
+Im not as much interested in Wall street as I am physics and reading about it.
+I read about a book a week (this is not an average as some books take 2 or 3 or
+4 weeks). I love reading about computers science, math, physics, philosophy,
+psychology, and sociology. Im currently reading Seth Lloyds Programming The
+Universe which is also about information theory and quantum computers.
+
+
+##Reading list
+
+Surely You're Joking, Mr. Feynman!
+Sapiens
+Outliers
+The grand design
+Nine pints by Rose George
+The 7 habits of highly effective people
+chaos by james gleick
+Influence Science and Practice by Robert Cialdini
+QED by Feynman
+What do you care what other people think by Feynman
+Astrophysics for people in a hurry by Tyson
+Talking to stranger by Gladwell
+Red Notice by Bill Browder
+The Code Book by Simon Singh
+Everybody Lies by Seth Stephens-Davidowitz
+Naked Statistics by Charles Wheelan
+Range by David Epstine
+the Signal and the Noise by Nate Silver
+The Physics of Wall street James Owen Weatherall
+David and Goliath Malcum
+Programming the Universe Seth Lloyd
+Lost in Math Sabine Hossenfelder
+
+I also follow MIT's deep learning lectures and labs on youtube every week but
+last week was the last lab and the rest of the course is just lectures. When its
+nice out I like to ride around on my longboard. On weekend I like to socialize
+with my friends. Im currently living on a twin 8 inch foam mattress on my
+friends floor in Chicago paying my worth of rent in cooking him breakfast and
+dinner and cleaning the apartment. I don't say this for pity points.I think I
+enjoy my life here more than some of my friends who have jobs and money. For
+the first time this pandemic I'm happy and love my life. My friend moves at the
+end of June and our deal expires. This is also 3 months before my student loans
+start (September) and I must start really applying to job regardless of field.
+I would like to take this course and spend at least 2 hours a day on it. Then
+take and pass the TF certification exam by then so that I can get a job in my
+dream field of Data Science.
+
+As only an undergrad its hard to even get responses from companies. Applying to
+AI position they usually require you to have a master or Ph.D. TensorFlow is one
+of the most important tools to building AI models. I would like to take this
+class and then pass the certification exam to prove to companies that I know
+what I'm doing. Right now my focus is on my classes and projects. My dreams are
+to get a job  in AI where Im not killing my self with work. To have time to
+enjoy life and continue learning (which I would defiantly do on Coursera just
+saying) and one day go back to school i done have any details about what kind of
+degree or even if i want to stay in CS i will defiantly be continuing to use
+computers but i might take my skills to physics or math departments if they have
+any questions that I really like.

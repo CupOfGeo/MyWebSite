@@ -128,6 +128,7 @@ def new_frac(value):
 
     return vals, json.dumps(agg)
 
+
 @app.callback(
     Output('frac', 'src'),
     [Input('color-dropdown', 'value'),

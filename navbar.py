@@ -11,7 +11,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from app import server
 from app import app
-from apps import shells, attractors, more_attractors
+from apps import shells, attractors, more_attractors, home
 import base64
 
 
@@ -115,7 +115,7 @@ def display_page(pathname):
     elif pathname == '/attractors':
         return more_attractors.layout
     else:
-        return shells.layout
+        return home.layout
 
 if __name__ == "__main__":
     app.run_server(debug=True)

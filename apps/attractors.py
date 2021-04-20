@@ -18,6 +18,17 @@ from app import app
 #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 layout = html.Div([
+    html.Div(children='''
+    Lorenz Attractors equation writen by no other than Edward Norton Lorenz
+    https://en.wikipedia.org/wiki/Lorenz_system
+
+    dx/dt = s*(y - x)
+    dy/dt = r*x - y - x*z
+    dz/dt = x*y - b*z
+
+    these three differentiable equation that when given the right values of s,r, and b
+    can give rise to chaotic behavoir. Give it a try!
+    '''),
     dcc.Graph(id='graph-lorenz'),#,style={'width': '80vh', 'height': '80vh'}),
     html.P('S'),
     dcc.Slider(
@@ -40,6 +51,12 @@ layout = html.Div([
         max=5,
         value=2.667,
         step=.001),
+
+    html.Div(children='''
+    This project was inspired by my love of information theory, chaos theory and
+    complex systems. This was actually my favorit lab from numerical analysis
+    but this time in 3d!
+    ''')
 ])
 
 
