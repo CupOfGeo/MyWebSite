@@ -69,7 +69,7 @@ def gen_random():
       #print(rvals[0])
       vals = list(rvals[0])
       agg = init_plot(func, rvals[0], n=2000)
-      print('loop', np.count_nonzero(np.array(agg.values)==0))
+      #print('loop', np.count_nonzero(np.array(agg.values)==0))
       empty = np.count_nonzero(np.array(agg.values)==0)
     #con = np.count_nonzero(im==0)
     #print(np.array(im).max())
@@ -95,8 +95,7 @@ def make_detailed(vals, n=n, cmap=viridis, label=True):
 
       agg = cvs.points(df, 'x', 'y')
       agg_sum = agg.values + agg_sum
-      #imgs.append(tf.shade(agg, cmap=color_map, name=lab)) #palette[color_map]
-      #imgs.append(tf.shade(xr.DataArray(agg_sum), cmap=palette['fire'], name=lab)) #palette[color_map]
+
 
     return xr.DataArray(agg_sum)#imgs
 
@@ -107,6 +106,7 @@ def make_pretty(color, vals, agg):
         agg = make_detailed(Clifford, vals)
     if color == '':
         color = 'fire'
+    print('vals:', vals)
     lab = ("{}, "*(len(vals)-1)+" {}").format(*vals) if vals else None
     img = tf.shade(xr.DataArray(agg), cmap=palette[color], name=lab)
     img = tf.set_background(img,'black')

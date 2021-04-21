@@ -73,8 +73,12 @@ layout = html.Div([
         ]),
         dbc.Row([
             dbc.Col(html.H5(
-                children="Hello I am George."
-                         " Im a python Developer who loves learning and building. I love giving people the opportunity to interact with the math and code themselfs so they can have a better intuition about whats actually happening other than just looking and some words or plots. Currently Im very focused on ML/AI and data science I find a lot of beauty in chaos and information theory so I like all kinda of data. Currently Im very focused on ML/AI and data science. I find a lot of beauty in chaos and information theory so I like all kinda of data.")
+                children=["Hello I am George.",html.Br(),
+                         " Im a python Developer who loves learning and building. I love giving people the opportunity "
+                         "to interact with the math and code themselfs so they can have a better intuition about whats "
+                         "actually happening other than just looking and some words or plots. Currently Im very focused "
+                         "on ML/AI and data science. I find a lot of beauty in chaos and information theory so I like all"
+                         " kinds of data."])
                 , className="mb-4")
         ]),
         dbc.Row([
@@ -86,6 +90,48 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(html.H5(
                 children="I want to become someone who can really help make the world a better place for all of us earthlings"
+            )
+                , className="mb-4")
+        ]),
+
+        dbc.Row([
+            dbc.Col(html.H5(
+                children=["Currently reading: Genius Makers by Cade Metz" ,html.Br(),
+                         "reading list:" ,html.Br(),
+                         "Atomic Habit by James Clear",html.Br(),
+                         "Genius: The Life and Science of Richard Feynman by James Gleick",html.Br(),
+                         "Ultralearning Scott Young" ,html.Br(),
+                         "Humankind: A hopeful History",html.Br(),]
+
+            )
+                , className="mb-4")
+        ]),
+
+        dbc.Row([
+            dbc.Col(html.H5(
+                children=["Books I read:",html.Br(),
+"Surely You're Joking, Mr. Feynman!",html.Br(),
+'Sapiens',html.Br(),
+'Outliers',html.Br(),
+'The grand design ',html.Br(),
+'Nine pints by Rose George',html.Br(),
+'The 7 habits of highly effective people ',html.Br(),
+'chaos by james gleick',html.Br(),
+'Influence Science and Practice by Robert Cialdini',html.Br(),
+'QED by Feynman',html.Br(),
+'What do you care what other people think by Feynman',html.Br(),
+'Astrophysics for people in a hurry by Tyson',html.Br(),
+'Talking to stranger by Gladwell',html.Br(),
+'Red Notice by Bill Browder',html.Br(),
+'The Code Book by Simon Singh',html.Br(),
+'Everybody Lies by Seth Stephens-Davidowitz',html.Br(),
+'Naked Statistics by Charles Wheelan',html.Br(),
+'Range by David Epstine',html.Br(),
+'the Signal and the Noise by Nate Silver',html.Br(),
+'The Physics of Wall street James Owen Weatherall',html.Br(),
+'David and Goliath Malcum',html.Br(),
+'Programming the Universe Seth Lloyd',html.Br(),
+"Lost in Math Sabine Hossenfelder",html.Br(),]
             )
                 , className="mb-4")
         ]),

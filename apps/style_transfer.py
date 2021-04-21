@@ -4,12 +4,14 @@ import dash
 from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_html_components as html
+from app import app
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-#app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
 
 layout = html.Div([
+    html.H1(children='THIS IS A WORK IN PROGRESS'),
     dcc.Upload(
         id='upload-image',
         children=html.Div([
@@ -67,5 +69,4 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
         return children
 
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+#

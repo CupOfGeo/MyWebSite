@@ -42,32 +42,9 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 from app import app
 
 layout = html.Div([
+    html.H5("This euqation is the work of Xah Lee and Mike Willams"),
+    html.A("View the orginal work here!",href="http://xahlee.info/SpecialPlaneCurves_dir/Seashell_dir/seashell_math_formulas.html"),
 
-    dbc.Container([
-        dbc.Row([
-            dbc.Col(
-                html.H5("This euqation is the work of Xah Lee and Mike Willams go check out the orginal work at http://xahlee.info/SpecialPlaneCurves_dir/Seashell_dir/seashell_math_formulas.html")
-                , className="mb-5 mt-5"),
-#html.A("here",href="http://xahlee.info/SpecialPlaneCurves_dir/Seashell_dir/seashell_math_formulas.html")
-        ]),
-
-        dbc.Row([
-            dbc.Col(html.H5(children="They are made with 3 parametric equations that plot the shell a surface and a small function")
-                    , className="mb-4")
-            ]),
-    ]),
-    html.Div(children='''
-
-
-    
-
-    W(u) = (u/(2*pi)*R)
-
-    Fx = W(u)*cos(N*u)*(1+cos(v)+cos(F*u)*A)
-    Fy = W(u)*sin(N*u)*(1+cos(v)+cos(F*u)*A)
-    Fz = W(u)*sin(v) + H*(u/(2*pi))**P
-
-    '''),
     dcc.Graph(id='graph-shell'),
     html.P('wave frequency'),
     dcc.Slider(
@@ -104,12 +81,30 @@ layout = html.Div([
         max=1,
         value=.2,
         step=.1),
+
+    dbc.Container([
+
+        dbc.Row([
+            dbc.Col(html.H5(children="They are made with 3 parametric equations that plot the shell a surface and a small function")
+                    , className="mb-4"),
+            ]),
+        dbc.Row([
+            dbc.Col(html.H5(['W(u) = (u/(2*pi)*R)',html.Br(),
+                    'Fx = W(u)*cos(N*u)*(1+cos(v)+cos(F*u)*A)',html.Br(),
+                    'Fy = W(u)*sin(N*u)*(1+cos(v)+cos(F*u)*A)', html.Br(),
+                    'Fz = W(u)*sin(v) + H*(u/(2*pi))**P', html.Br()])
+                    , className="mb-4"),
+
+            ]),
+    ]),
+
+
     html.Div(children='''
-    This porject was inspired by my love of shells and the beach. One of the
-    running jokes of my comp sci carrer is that when people asked me what I want
-    to do after college I would always respond. I wanna sell sea shells by the
-    seashore. I never found out what I wanna do at Bucknell but I what I love
-    and that was learning math and science, building with computers and helping
+    This project was inspired by my love of shells and the beach. One of the
+    running jokes of my comp sci career is that when people asked me what I want
+    to do after college I would always respond. "I wanna sell sea shells by the
+    seashore." I never found out what I wanna do at Bucknell but I did find what I love.
+    That was learning math and science, building with computers and helping
     others how ever I can.
     ''')
     ])

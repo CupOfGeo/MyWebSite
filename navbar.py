@@ -11,13 +11,12 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from app import server
 from app import app
-from apps import shells, attractors, more_attractors, home
+from apps import shells, attractors, more_attractors, home, style_transfer
 import base64
 
 
 
-#ME_LOGO = 'me.png' # replace with your own image
-image_filename = 'me.png' # replace with your own image
+image_filename = 'me.png' # logo
 encoded_image = base64.b64encode(open(image_filename, 'rb').read())
 
 
@@ -29,7 +28,7 @@ encoded_image = base64.b64encode(open(image_filename, 'rb').read())
 # app = dash.Dash(external_stylesheets=[dbc.themes.SKETCHY])
 
 # make a reuseable navitem for the different examples
-nav_item = dbc.NavItem(dbc.NavLink("Link", href="#"))
+nav_item = dbc.NavItem(dbc.NavLink("Home", href="/home"))
 
 # make a reuseable dropdown for the different examples
 dropdown = dbc.DropdownMenu(
@@ -39,6 +38,8 @@ dropdown = dbc.DropdownMenu(
         dbc.DropdownMenuItem("More Attractors",href="/attractors"),
         dbc.DropdownMenuItem(divider=True),
         dbc.DropdownMenuItem("Coming soon"),
+        dbc.DropdownMenuItem("Style Transfer",),#href="/style_transfer"
+        dbc.DropdownMenuItem("Rick & Morty Generator")
     ],
     nav=True,
     in_navbar=True,
@@ -114,6 +115,8 @@ def display_page(pathname):
         return attractors.layout
     elif pathname == '/attractors':
         return more_attractors.layout
+    elif pathname == '/style_transfer':
+        return style_transfer.layout
     else:
         return home.layout
 

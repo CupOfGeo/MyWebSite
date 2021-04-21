@@ -27,7 +27,7 @@ layout = html.Div([
     dz/dt = x*y - b*z
 
     these three differentiable equation that when given the right values of s,r, and b
-    can give rise to chaotic behavoir. Give it a try!
+    can give rise to chaotic behavior. Give it a try!
     '''),
     dcc.Graph(id='graph-lorenz'),#,style={'width': '80vh', 'height': '80vh'}),
     html.P('S'),
@@ -54,7 +54,7 @@ layout = html.Div([
 
     html.Div(children='''
     This project was inspired by my love of information theory, chaos theory and
-    complex systems. This was actually my favorit lab from numerical analysis
+    complex systems. This was actually my favorite lab from numerical analysis
     but this time in 3d!
     ''')
 ])
