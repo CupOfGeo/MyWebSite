@@ -1,6 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import numpy as np
 from PIL import Image
@@ -11,6 +12,7 @@ import requests
 from app import app
 from cliff_attractor import gen_random, make_pretty, make_detailed
 import random
+
 
 # have have a buffer of a images so you don't wait as long
 # (still make them wait a few seconds for the illusion of computing)
@@ -245,16 +247,20 @@ big_cmaps = ['CET_C5',
 
 layout = html.Div([
     #,style={'width': '80vh', 'height': '80vh'}),
-    html.Div(children='''
-    Welcome, please wait for your attractor to generate before clicking the
-    button or dropdown if one doesnt generate in 30 second you may try clicking
-    the button this page is a work in progress!
-
-    The base code is from Lázaro Alonso
-    https://lazarusa.github.io/Webpage/index.html
-    I didnt see any place for less technical people to generate and
-    color there own attractors and wanted to share with my sisters and friends 
-    '''),
+    dbc.Container([
+        dbc.Row([
+            dbc.Col(html.H5(
+             children=["Welcome, please wait for your attractor to generate before clicking the",
+                       ' button or dropdown if one doesnt generate in 30 second you may try clicking',
+                       ' the button this page is a work in progress!',
+                       html.Br(),
+                       ' The base code is from ',
+    html.A("Lázaro Alonso",href='https://lazarusa.github.io/Webpage/index.html'),
+    ' I didnt see any place for less technical people to generate and',
+    ' color there own attractors and wanted to share with my sisters and friends'], className="text-center")
+                    , className="mb-5 mt-5")
+        ]),
+     ]),
     html.Div([
             html.Img(id='frac',)
     ], style={'textAlign': 'center'}),
@@ -270,32 +276,38 @@ layout = html.Div([
 
     html.Div(id='inital-params',children='',style={'display': 'none'}),
     html.Div(id='agg-params',children='',style={'display': 'none'}),
-    html.Div(children='''
-    This program uses the Clifford formula
-    x = sin(a * y) + c * np.cos(a * x)
-    y = np.sin(b * x) + d * np.cos(b * y)
-
-   fractals work by you starting with some inital conditions
-I start with x[0] and y[0] = 0
-and 4 other parameters a,b,c, and d.
-
-then with the initial conditions and the other 4 parameter the values are put into
-this equation and then you get a new value for x and y and then you take
-your new result and feed that again into the Clifford equation. the fractals
-you see here are run through this equation 100,000,000 times.
-
-I set these with random numbers and then do a little bit of extra math find
-parameters that generate what i think are more interesting/pretty fractals. I also
-do some fancy math to compute them more efficiently as they are easy and
-quick to calculate but become very spacious and quick very fast. So i had to
-move the computation off Heroku who im using to host this site and turn it
-into a google cloud function api call where i can give it a little more ram.
-
-I want people to be able to generate and color there own fractals and admire
-their beauty as I do with every one.
 
 
-    '''),
+    dbc.Row([
+            dbc.Col(html.H6(
+             children=[
+              #http://www.pickover.com/
+html.A("This program uses Cliff Pickover's formula",href="http://www.pickover.com/"),
+html.Br(),
+    'x = sin(a * y) + c * np.cos(a * x)',html.Br(),
+    'y = np.sin(b * x) + d * np.cos(b * y)',html.Br(),
+
+   ' Fractals work by you starting with some initial conditions I start with x[0] and y[0] = 0 and 4 other set parameters a,b,c, and d.'
+   ' Then with the initial conditions and the other 4 parameter the values are put into the clifford equation.'
+   ' It will give you a new x[1] and y[1] value as a result.'
+   ' Then feed that result into the equation again to get a new result x[3] & y[3].'
+   ' Then you do that again and again putting you previous result into the equation.'
+   ' The fractals you see here are run through this equation 100,000,000 times.'
+   ' The images is colored based on how many times the the result landed in a certain pixel value',html.Br(),
+   ' Not all of these initial conditions generate "interesting" ',
+              " or chaotic works actually most don't",
+   ' I bit of extra math to find parameters that generate what I think are more interesting/pretty fractals. '
+   ' I also do some fancy math to compute them more efficiently.'
+   ' As they are easy to calculate but become very spacious and slow to calculate very fast.'
+   ' Too big and slow for Heroku who im using to host this site and turn it into a google cloud serverless api function call.',html.Br(),
+
+   ' I want people to be able to generate and color there own fractals and admire',
+   ' their beauty as I do with every one.'
+
+             ])
+                    , className="mb-5 mt-5")
+        ]),
+
 ])
 
 @app.callback(

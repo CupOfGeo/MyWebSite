@@ -75,7 +75,7 @@ layout = html.Div([
             dbc.Col(html.H5(
                 children=["Hello I am George.",html.Br(),
                          " Im a python Developer who loves learning and building. I love giving people the opportunity "
-                         "to interact with the math and code themselfs so they can have a better intuition about whats "
+                         "to interact with the math and code themselves so they can have a better intuition about whats "
                          "actually happening other than just looking and some words or plots. Currently Im very focused "
                          "on ML/AI and data science. I find a lot of beauty in chaos and information theory so I like all"
                          " kinds of data."])
@@ -83,13 +83,7 @@ layout = html.Div([
         ]),
         dbc.Row([
             dbc.Col(html.H5(
-                children="Who do I want to become?"
-            )
-                , className="mb-4")
-        ]),
-        dbc.Row([
-            dbc.Col(html.H5(
-                children="I want to become someone who can really help make the world a better place for all of us earthlings"
+                children=["Who do I want to become?",html.Br(),"    I want to become someone who can really help make the world a better place for all of us earthlings"]
             )
                 , className="mb-4")
         ]),
