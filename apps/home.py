@@ -28,7 +28,7 @@ layout = html.Div([
         ]),
 
         dbc.Row([
-            dbc.Col(dbc.Card(children=[html.H3(children='Get the original datasets used in this dashboard',
+            dbc.Col(dbc.Card(children=[html.H3(children='Attractors',
                                                className="text-center"),
                                        dbc.Row([dbc.Col(dbc.Button("Lorenz Attractors", href="/lorenz",
                                                                    color="primary"),
