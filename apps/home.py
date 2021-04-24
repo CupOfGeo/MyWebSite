@@ -28,7 +28,7 @@ layout = html.Div([
         ]),
 
         dbc.Row([
-            dbc.Col(dbc.Card(children=[html.H3(children='Attractors',
+            dbc.Col(dbc.Card(children=[html.H3(children='Fractals',
                                                className="text-center"),
                                        dbc.Row([dbc.Col(dbc.Button("Lorenz Attractors", href="/lorenz",
                                                                    color="primary"),
@@ -41,7 +41,7 @@ layout = html.Div([
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4"),
 
-            dbc.Col(dbc.Card(children=[html.H3(children='Access the code used to build this site and apps are on my Github',
+            dbc.Col(dbc.Card(children=[html.H3(children='Github',
                                                className="text-center"),
                                        dbc.Button("CupOfGeo",
                                                   href="https://github.com/CupOfGeo",
@@ -81,12 +81,12 @@ layout = html.Div([
                          " kinds of data."])
                 , className="mb-4")
         ]),
-        dbc.Row([
-            dbc.Col(html.H5(
-                children=["Who do I want to become?",html.Br(),"    I want to become someone who can really help make the world a better place for all of us earthlings"]
-            )
-                , className="mb-4")
-        ]),
+        # dbc.Row([
+        #     dbc.Col(html.H5(
+        #         children=["Who do I want to become?",html.Br(),"    I want to become someone who can really help make the world a better place for all of us earthlings"]
+        #     )
+        #         , className="mb-4")
+        # ]),
 
         dbc.Row([
             dbc.Col(html.H5(
