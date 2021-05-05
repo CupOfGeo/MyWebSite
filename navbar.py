@@ -39,7 +39,7 @@ dropdown = dbc.DropdownMenu(
         dbc.DropdownMenuItem(divider=True),
         dbc.DropdownMenuItem("Coming soon"),
         dbc.DropdownMenuItem("Style Transfer",),#href="/style_transfer"
-        dbc.DropdownMenuItem("Rick & Morty Generator")
+        dbc.DropdownMenuItem("Rick & Morty Generator") #href /rick_gen
     ],
     nav=True,
     in_navbar=True,
