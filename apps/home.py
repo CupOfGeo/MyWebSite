@@ -63,8 +63,6 @@ layout = html.Div([
                     , width=4, className="mb-4")
         ], className="mb-5"),
 
-        # html.A("Special thanks to Flaticon for the icon in COVID-19 Dash's logo.",
-        #        href="https://www.flaticon.com/free-icon/coronavirus_2913604")
 
         dbc.Row([
             dbc.Col(html.H3(

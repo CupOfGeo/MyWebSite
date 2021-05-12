@@ -33,9 +33,13 @@ layout = html.Div([
     ),
     html.Div(id='output-image-upload'),
     html.Div(children='''
-    This is a Neural style transfer this is actually googles model here is the orginal paper https://arxiv.org/abs/1508.06576.
-    No this is not my work i did build the serverless api call to host it. 
-    I built one with VGG19 which is a large convlotion pretrained image classification network.
+    This is a Neural style transfer here is the orginal paper https://arxiv.org/abs/1508.06576.
+     
+    This uses the VGG19 model which is a large pretrained convolution image classification network.
+    It was trained on the ImageNet dataset which has over 1.4 million images in total. 
+    It can do 1000 different class classifications 
+    mostly animals but here's a list (https://image-net.org/challenges/LSVRC/2014/browse-synsets).
+    
     ''')
 ])
 
