@@ -8,15 +8,14 @@ from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_html_components as html
 import json
-from app import app
 
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-#app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-layout = html.Div([
+app.layout = html.Div([
     html.H1(children='THIS IS A WORK IN PROGRESS'),
     html.Div(id='output_title'),
     html.Img(id='output'),
@@ -164,3 +163,9 @@ def submit_button(clk, style,style_name, content, content_name):
         clean_name = clean_filename(style_name[0], content_name[0])
         new_image = Image.fromarray(np.array(json_data, dtype='uint8'))
         return new_image, clean_name
+
+
+
+
+if __name__ == '__main__':
+    app.run_server(debug=True, host='0.0.0.0')

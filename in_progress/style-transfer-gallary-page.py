@@ -70,7 +70,7 @@ app.layout = html.Div([
 def update_output(list_of_contents, list_of_names, list_of_dates, prev_images):
     #save content to style_transfer_images/filename
 
-    files = [f for f in listdir('style_transfer_images')]
+    files = [f for f in listdir('../style_transfer_images')]
     print(files)
     list_of_elements = []
     for file in files:

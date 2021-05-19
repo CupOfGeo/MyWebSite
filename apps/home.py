@@ -146,7 +146,7 @@ layout = html.Div([
             dbc.Col(
 
                 html.H5(
-                children=["Currently reading: Atomic Habit by James Clear" ,html.Br(),
+                children=["Currently reading: The Annotated Turing by Charles Petzold" ,html.Br(),
                          "reading list:" ,html.Br(),
                          "Ultralearning Scott Young" ,html.Br(),
                          "Genius: The Life and Science of Richard Feynman by James Gleick",html.Br(),
@@ -159,6 +159,7 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(html.H5(
                 children=["Books I read:",html.Br(),
+'Atomic Habit by James Clear' ,html.Br(),
 'Genius Makers by Cade Metz', html.Br(),
 "Lost in Math Sabine Hossenfelder",html.Br(),
 'Programming the Universe Seth Lloyd',html.Br(),
