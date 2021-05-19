@@ -42,8 +42,8 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 from app import app
 
 layout = html.Div([
-    html.H5("This euqation is the work of Xah Lee and Mike Willams"),
-    html.A("View the orginal work here!",href="http://xahlee.info/SpecialPlaneCurves_dir/Seashell_dir/seashell_math_formulas.html"),
+    html.H5("This equation is the work of Xah Lee and Mike Willams"),
+    html.A("View the original work here!",href="http://xahlee.info/SpecialPlaneCurves_dir/Seashell_dir/seashell_math_formulas.html"),
 
     dcc.Graph(id='graph-shell'),
     html.P('wave frequency'),

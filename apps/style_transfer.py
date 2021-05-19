@@ -7,17 +7,22 @@ import requests
 from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 import json
 from app import app
 
 
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+#external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 #app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 layout = html.Div([
-    html.H1(children='THIS IS A WORK IN PROGRESS'),
+    dbc.Row([
+        dbc.Col(html.H3('Style Transfer')
+                , className="mb-4")
+    ]),
+
     html.Div(id='output_title'),
     html.Img(id='output'),
     dcc.Upload(
@@ -60,14 +65,27 @@ dcc.Upload(
         multiple=True
     ),
     html.Div(id='style-image-upload'),
-    html.Button(
+    dbc.Button(
         id='button',
         children='Submit'
     ),
 
+    dbc.Row([
+            dbc.Col(html.H5('This is the first ml model I have ever deployed on the internet for people to use.'
+                            'No this is not my model this is actually 2 models from tensorflow lite.'),
+                    html.A("Here's the Link to the original notebook on github",href='https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/examples/style_transfer/overview.ipynb'),
+                    html.H5("They are two very small models together only about 5MB and are rather quick and can be done on a processor. "
+                            "Perfect for deploying on a serverless node. Sounds nice but it comes with some tradeoffs of quality."
+                            "I have built my own neural style transfer from the VGG19 model which is a large pretrained convolution image classification network."
+                            #It was trained on the ImageNet dataset which has over 1.4 million images in total.
+                            # It can do 1000 different class classifications
+                            "It has 19 layers of convolutions hence the name and is over 100X larger at around 625MB."
+                            "How it works is the neurel network learned some filters while training. It also learns what pictures it should apply which filters too. So it doenst use all of the filters."
+                            " Of the filters it thinks it should you we take a sort of average of them to attempt to understand the 'style' of the images.")
 
 
-
+                    , className="mb-4")
+        ]),
 
 
 
