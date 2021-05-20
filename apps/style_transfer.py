@@ -1,4 +1,4 @@
-import datetime
+#import datetime
 import numpy as np
 from PIL import Image
 
@@ -70,22 +70,22 @@ dcc.Upload(
         children='Submit'
     ),
 
-    dbc.Row([
-            dbc.Col(html.H5('This is the first ml model I have ever deployed on the internet for people to use.'
-                            'No this is not my model this is actually 2 models from tensorflow lite.'),
-                    html.A("Here's the Link to the original notebook on github",href='https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/examples/style_transfer/overview.ipynb'),
-                    html.H5("They are two very small models together only about 5MB and are rather quick and can be done on a processor. "
-                            "Perfect for deploying on a serverless node. Sounds nice but it comes with some tradeoffs of quality."
-                            "I have built my own neural style transfer from the VGG19 model which is a large pretrained convolution image classification network."
-                            #It was trained on the ImageNet dataset which has over 1.4 million images in total.
-                            # It can do 1000 different class classifications
-                            "It has 19 layers of convolutions hence the name and is over 100X larger at around 625MB."
-                            "How it works is the neurel network learned some filters while training. It also learns what pictures it should apply which filters too. So it doenst use all of the filters."
-                            " Of the filters it thinks it should you we take a sort of average of them to attempt to understand the 'style' of the images.")
-
-
-                    , className="mb-4")
-        ]),
+    # dbc.Row([
+    #         dbc.Col(html.H5('This is the first ml model I have ever deployed on the internet for people to use.'
+    #                         'No this is not my model this is actually 2 models from tensorflow lite.'),
+    #                 html.A("Here's the Link to the original notebook on github",href='https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/examples/style_transfer/overview.ipynb'),
+    #                 html.H5("They are two very small models together only about 5MB and are rather quick and can be done on a processor. "
+    #                         "Perfect for deploying on a serverless node. Sounds nice but it comes with some tradeoffs of quality."
+    #                         "I have built my own neural style transfer from the VGG19 model which is a large pretrained convolution image classification network."
+    #                         #It was trained on the ImageNet dataset which has over 1.4 million images in total.
+    #                         # It can do 1000 different class classifications
+    #                         "It has 19 layers of convolutions hence the name and is over 100X larger at around 625MB."
+    #                         "How it works is the neurel network learned some filters while training. It also learns what pictures it should apply which filters too. So it doenst use all of the filters."
+    #                         " Of the filters it thinks it should you we take a sort of average of them to attempt to understand the 'style' of the images.")
+    #
+    #
+    #                 , className="mb-4")
+    #     ]),
 
 
 
@@ -104,7 +104,7 @@ dcc.Upload(
 def parse_contents(contents, filename, date):
     return html.Div([
         html.H5(filename),
-        html.H6(datetime.datetime.fromtimestamp(date)),
+        #html.H6(datetime.datetime.fromtimestamp(date)),
 
         # HTML images accept base64 encoded strings in the same format
         # that is supplied by the upload
