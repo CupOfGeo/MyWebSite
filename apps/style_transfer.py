@@ -19,7 +19,7 @@ from app import app
 
 layout = html.Div([
     dbc.Row([
-        dbc.Col(html.H3('Style Transfer')
+        dbc.Col(html.H3('Style Transfer frontend changes coming soon')
                 , className="mb-4")
     ]),
 

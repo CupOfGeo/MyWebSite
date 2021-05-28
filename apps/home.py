@@ -22,7 +22,7 @@ layout = html.Div([
             ]),
 
         dbc.Row([
-            dbc.Col(html.H5(children='This app is a gallery of interactive projects and art I want to share with the world.'
+            dbc.Col(html.H5(children='This website is all python using Plotlys Dash on heroku (currently being moved over to aws). It is a gallery of interactive projects and art I want to share with the world.'
                                      '')
                     , className="mb-5")
         ]),
@@ -113,14 +113,15 @@ layout = html.Div([
                 html.H5(
                 children=["Currently taking:",
                         #html.Ul([html.Li(children=)]),
-                        html.Ul([html.Li(children=[html.A("Building Modern Python Applications on AWS on coursera",href='https://www.coursera.org/learn/building-modern-python-applications-on-aws')]),
+                        html.Ul([html.Li(children=[html.A("Building Modern Python Applications on AWS on coursera",href='https://www.coursera.org/learn/building-modern-python-applications-on-aws'),
+                                                   html.A('Machine Learning Engineering for Production',)]),
                         #html.Li(children=[]),
                                  ]),
 
-                          "Wish list: ",
+                          "Up next: ",
                             html.Ul([
                                 html.Li(children=[html.A('TensorFlow: Advanced Techniques Specialization',href='https://www.coursera.org/specializations/tensorflow-advanced-techniques')]),
-                                html.Li(children=[html.A('Machine Learning Engineering for Production',)]),
+
                                      ]),
 
                           "Recently completed:",

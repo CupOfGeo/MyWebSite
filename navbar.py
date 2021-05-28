@@ -11,7 +11,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from app import server
 from app import app
-from apps import shells, attractors, more_attractors, home, style_transfer
+from apps import shells, attractors, more_attractors, home, style_transfer, rick_gen
 import base64
 
 
@@ -39,7 +39,7 @@ dropdown = dbc.DropdownMenu(
         dbc.DropdownMenuItem("Style Transfer",href="/style_transfer"),
         dbc.DropdownMenuItem(divider=True),
         dbc.DropdownMenuItem("Coming soon"),
-        dbc.DropdownMenuItem("Rick & Morty Generator") #href /rick_gen
+        dbc.DropdownMenuItem("Rick & Morty Generator",href='/rick_gen'),
     ],
     nav=True,
     in_navbar=True,
@@ -117,6 +117,8 @@ def display_page(pathname):
         return more_attractors.layout
     elif pathname == '/style_transfer':
         return style_transfer.layout
+    elif pathname == '/rick_gen':
+        return rick_gen.layout
     else:
         return home.layout
 
