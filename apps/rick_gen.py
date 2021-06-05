@@ -9,7 +9,7 @@ from app import app
 
 #app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
-print('App is starting..')
+
 
 layout = html.Div([
 	html.H3("Rick And Morty Generator comming soon",
