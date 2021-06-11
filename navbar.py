@@ -18,7 +18,7 @@ import base64
 
 image_filename = 'me.png' # logo
 encoded_image = base64.b64encode(open(image_filename, 'rb').read())
-
+#'data:image/png;base64,{}'.format(encoded_image.decode())
 
 
 
