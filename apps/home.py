@@ -158,8 +158,9 @@ layout = html.Div([
 
                 html.H5(
                     # The Annotated Turing by Charles Petzold
-                    children=["Currently reading: Lifespan by David Sinclair", html.Br(),
+                    children=["Currently reading: Zero to One by Peter Thiel", html.Br(),
                               "reading list:", html.Br(),
+                              "Human Capabilities by Stuart Russell", html.Br(),
                               "Genius: The Life and Science of Richard Feynman by James Gleick", html.Br(),
                               "Humankind: A hopeful History", html.Br(), ]
 
@@ -170,7 +171,8 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(html.H5(
                 children=["Books I read:", html.Br(),
-                          "Do Androids Dream of Electric Sheep by Philip K. Dick"
+                          "Lifespan by David Sinclair", html.Br(),
+                          "Do Androids Dream of Electric Sheep by Philip K. Dick", html.Br(),
                           "Ultralearning Scott Young", html.Br(),
                           'Atomic Habit by James Clear', html.Br(),
                           'Genius Makers by Cade Metz', html.Br(),
