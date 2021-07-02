@@ -80,7 +80,7 @@ layout = html.Div([
                           " to interact with the math and code themselves so they can have a better intuition about whats"
                           " actually happening other than just looking and some words or plots. Currently Im very focused"
                           " on ML/AI and data science. I find a lot of beauty in chaos and information theory so I like all"
-                          " kinds of data. I want to become someone who can really help make the world a better place for all of us earthlings"])
+                          " kinds of data. I want to become someone who can really help make the world a better place for all earthlings."])
                 , className="mb-4")
         ]),
         dbc.Row([
@@ -158,9 +158,9 @@ layout = html.Div([
 
                 html.H5(
                     # The Annotated Turing by Charles Petzold
-                    children=["Currently reading: Zero to One by Peter Thiel", html.Br(),
+                    children=["Currently reading: Human Capabilities by Stuart Russell", html.Br(),
                               "reading list:", html.Br(),
-                              "Human Capabilities by Stuart Russell", html.Br(),
+                              "Hitch hikers guide to the Galaxy", html.Br(),
                               "Genius: The Life and Science of Richard Feynman by James Gleick", html.Br(),
                               "Humankind: A hopeful History", html.Br(), ]
 
@@ -171,6 +171,7 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(html.H5(
                 children=["Books I read:", html.Br(),
+                          "Zero to One by Peter Thiel", html.Br(),
                           "Lifespan by David Sinclair", html.Br(),
                           "Do Androids Dream of Electric Sheep by Philip K. Dick", html.Br(),
                           "Ultralearning Scott Young", html.Br(),
