@@ -92,10 +92,10 @@ layout = html.Div([
             dbc.Col(
 
                 html.H5(
+                    # links and write descriptions
                     children=["Project list current:",
                               html.Ul([html.Li("This website and moving my ai projects into it"),
-                                       html.Li(
-                                           "Twitter Ghost Writer MVP I have been building with gpt2 to start a SaaS")]),
+                                       html.Li("Python Discords code jam")]),
 
                               "Projects Shelf:",
                               html.Ul([html.Li(
@@ -108,46 +108,46 @@ layout = html.Div([
                 # html.Ul([html.Li()]),
                 , className="mb-4")
         ]),
-        dbc.Row([
-            dbc.Col(html.H3('Learn')
-                    , className="mb-4")
-        ]),
-        dbc.Row([
-            dbc.Col(
-
-                html.H5(
-                    children=["Currently taking:",
-                              # html.Ul([html.Li(children=)]),
-                              html.Ul([html.Li(children=[
-                                  html.A("Building Modern Python Applications on AWS on coursera",
-                                         href='https://www.coursera.org/learn/building-modern-python-applications-on-aws'),
-                                  html.A('Machine Learning Engineering for Production', )]),
-                                       # html.Li(children=[]),
-                                       ]),
-
-                              "Up next: ",
-                              html.Ul([
-                                  html.Li(children=[html.A('TensorFlow: Advanced Techniques Specialization',
-                                                           href='https://www.coursera.org/specializations/tensorflow-advanced-techniques')]),
-
-                              ]),
-
-                              "Recently completed:",
-                              html.Ul([
-                                  html.Li(children=[html.A('Machine Learning by Andrew Ng from Standford',
-                                                           href='https://www.coursera.org/learn/machine-learning')]),
-                                  html.Li(children=[
-                                      html.A('DeepLearning.AI TensorFlow Developer Professional Certificate',
-                                             href="https://www.coursera.org/professional-certificates/tensorflow-in-practice"),
-                                      ' and passed Tensorflow certification exam', ]),
-                                  html.Li(children=[
-                                      html.A("MIT's intro to deep learning", href='http://introtodeeplearning.com/')]),
-                              ]),
-
-                              ]
-                )
-                , className="mb-4")
-        ]),
+        # dbc.Row([
+        #     dbc.Col(html.H3('Learn')
+        #             , className="mb-4")
+        # ]),
+        # dbc.Row([
+        #     dbc.Col(
+        #
+        #         html.H5(
+        #             children=["Currently taking:",
+        #                       # html.Ul([html.Li(children=)]),
+        #                       html.Ul([html.Li(children=[
+        #                           html.A("Building Modern Python Applications on AWS on coursera",
+        #                                  href='https://www.coursera.org/learn/building-modern-python-applications-on-aws'),
+        #                           html.A('Machine Learning Engineering for Production', )]),
+        #                                # html.Li(children=[]),
+        #                                ]),
+        #
+        #                       "Up next: ",
+        #                       html.Ul([
+        #                           html.Li(children=[html.A('TensorFlow: Advanced Techniques Specialization',
+        #                                                    href='https://www.coursera.org/specializations/tensorflow-advanced-techniques')]),
+        #
+        #                       ]),
+        #
+        #                       "Recently completed:",
+        #                       html.Ul([
+        #                           html.Li(children=[html.A('Machine Learning by Andrew Ng from Standford',
+        #                                                    href='https://www.coursera.org/learn/machine-learning')]),
+        #                           html.Li(children=[
+        #                               html.A('DeepLearning.AI TensorFlow Developer Professional Certificate',
+        #                                      href="https://www.coursera.org/professional-certificates/tensorflow-in-practice"),
+        #                               ' and passed Tensorflow certification exam', ]),
+        #                           html.Li(children=[
+        #                               html.A("MIT's intro to deep learning", href='http://introtodeeplearning.com/')]),
+        #                       ]),
+        #
+        #                       ]
+        #         )
+        #         , className="mb-4")
+        # ]),
         dbc.Row([
             dbc.Col(html.H3('Read')
                     , className="mb-4")
@@ -159,11 +159,19 @@ layout = html.Div([
                 html.H5(
                     # The Annotated Turing by Charles Petzold
                     children=["Currently reading: Human Capabilities by Stuart Russell", html.Br(),
+                              "& Effective Python by Brett Slatkin", html.Br(),
                               "reading list:", html.Br(),
+                              "Animal Farm by George Orwell", html.Br(),
+                              "1989 by George Orwell", html.Br(),
+                              'Grokking Algorithms by Aditya Bhargava', html.Br(),
+                              'The Art of Doing Science and Engineering', html.Br(),
+                              "Code by Charles Petzoid", html.Br(),
+                              "Life 3.0 by Max Tegmark", html.Br(),
+                              'Superintelligence by nick bostrom', html.Br(),
                               "Hitch hikers guide to the Galaxy", html.Br(),
+                              'Dune by Frank Herbert', html.Br(),
                               "Genius: The Life and Science of Richard Feynman by James Gleick", html.Br(),
-                              "Humankind: A hopeful History", html.Br(), ]
-
+                              "Humankind: A hopeful History", html.Br()]
                 )
                 , className="mb-4")
         ]),
@@ -192,7 +200,7 @@ layout = html.Div([
                           'What do you care what other people think by Feynman', html.Br(),
                           'QED by Feynman', html.Br(),
                           'Influence Science and Practice by Robert Cialdini', html.Br(),
-                          'chaos by james gleick', html.Br(),
+                          'Chaos by james gleick', html.Br(),
                           'The 7 Habits of highly effective people', html.Br(),
                           'Nine pints by Rose George', html.Br(),
                           'The Grand Design ', html.Br(),
