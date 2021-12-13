@@ -1,5 +1,6 @@
-import dash_html_components as html
 import dash_bootstrap_components as dbc
+# from dash import dcc
+from dash import html
 
 # needed only if running this as a single page app
 # external_stylesheets = [dbc.themes.LUX]
@@ -18,15 +19,18 @@ layout = html.Div([
         ]),
         dbc.Row([
             dbc.Col(html.H5(
-                children="Welcome friends family and possible future friends. I'm having a great time in Chicago right now all is good! I hope you enjoy my work")
-                    , className="mb-4")
+                children="Welcome friends family and possible future friends. I'm back in New York had a wonderful "
+                         "time in Chicago! I hope you enjoy my work")
+                , className="mb-4")
         ]),
 
         dbc.Row([
             dbc.Col(html.H5(
-                children='This website is all python using Plotlys Dash on heroku (currently being moved over to aws). It is a gallery of interactive projects and art I want to share with the world.'
-                         '')
-                    , className="mb-5")
+                children=[
+                    'This website is all python using Plotlys Dash on heroku. I want this to be a showcase of my work '
+                    'not a blog. It is a gallery of interactive projects and art I want to share with the world.']
+            )
+                , className="mb-5")
         ]),
 
         dbc.Row([
@@ -45,25 +49,30 @@ layout = html.Div([
 
             dbc.Col(dbc.Card(children=[html.H3(children='Github',
                                                className="text-center"),
-                                       dbc.Button("CupOfGeo",
-                                                  href="https://github.com/CupOfGeo",
-                                                  color="primary",
-                                                  className="mt-3"),
+                                       dbc.Row([dbc.Row(dbc.Button("CupOfGeo",
+                                                           href="https://github.com/CupOfGeo",
+                                                           color="primary",
+                                                           ))
+
+                                                ], justify="center")
+
                                        ],
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4"),
 
             dbc.Col(dbc.Card(children=[html.H3(children='Sea Shells',
                                                className="text-center"),
-                                       dbc.Button("Sea Shells",
+                                       dbc.Row([dbc.Row(dbc.Button("Sea Shells",
                                                   href="/shell",
                                                   color="primary",
-                                                  className="mt-3"),
+                                                  className="mt-3")),
 
+                                            ], justify="center")
                                        ],
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4")
-        ], className="mb-5"),
+
+        ], className="mb-5", justify="center"),
 
         dbc.Row([
             dbc.Col(html.H3(
@@ -73,14 +82,13 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(html.H5(
                 children=["Hello I am George.", html.Br(),
-                          " Im a python Developer who loves learning and building."
-                          " I recently graduated Bucknell University in 2020 as a computer science engineer"
-                          " with a minor in math and physics."
-                          " I love giving people the opportunity"
-                          " to interact with the math and code themselves so they can have a better intuition about whats"
-                          " actually happening other than just looking and some words or plots. Currently Im very focused"
-                          " on ML/AI and data science. I find a lot of beauty in chaos and information theory so I like all"
-                          " kinds of data. I want to become someone who can really help make the world a better place for all earthlings."])
+                          """Im a python Developer who loves learning and building. I recently graduated Bucknell 
+                          University in 2020 as a computer science engineer with a minor in math and physics. I love 
+                          giving people the opportunity to interact with the math and code themselves so they can 
+                          have a better intuition about whats actually happening other than just looking and some 
+                          words or plots. Currently Im very focused on ML/AI and data science. I find a lot of beauty 
+                          in chaos and information theory so I like all kinds of data. I want to become someone who 
+                          can really help make the world a better place for all earthlings."""])
                 , className="mb-4")
         ]),
         dbc.Row([
@@ -94,16 +102,27 @@ layout = html.Div([
                 html.H5(
                     # links and write descriptions
                     children=["Project list current:",
+
                               html.Ul([html.Li("This website and moving my ai projects into it"),
-                                       html.Li("Python Discords code jam")]),
+
+                                       ]),
 
                               "Projects Shelf:",
-                              html.Ul([html.Li(
-                                  "Cloning Rick's voice I want to get better working with audio data. I started segmenting clips and cleaning data but then started this site which took priority"),
-                                       html.Li(
-                                           "Rebuild my AI rapper bigger and better than ever. In school one of my first ml projects was text generation with LSTMs and I built a dataset of rap lyrics and I know that I could make it 100x better"),
-                                       html.Li(children=["build something with ", html.A("OpenAI's jukebox",
-                                                                                         href='https://openai.com/blog/jukebox/')])]),
+                              html.Ul([
+                                  html.Li(children=["build something with ", html.A("OpenAI's jukebox",
+                                                                                    href='https://openai.com/blog/jukebox/')]),
+
+                                  # https://somerandommusicapp.herokuapp.com/
+                                  html.Li(children=[html.A("A comparison of Decision Trees vs Neural Nets", href="https://somerandommusicapp.herokuapp.com/")]),
+
+                                  # https://dashboard.heroku.com/apps/jaredsmaps
+                                  html.Li(children=[html.A("Optimal Route Planner", href='https://dashboard.heroku.com/apps/jaredsmaps')]),
+
+                                  html.Li("8 deck card counter"),
+
+                                  html.Li("Python Discords code jam"),
+
+                              ]),
                               ])
                 # html.Ul([html.Li()]),
                 , className="mb-4")
@@ -158,11 +177,10 @@ layout = html.Div([
 
                 html.H5(
                     # The Annotated Turing by Charles Petzold
-                    children=["Currently reading: Human Capabilities by Stuart Russell", html.Br(),
-                              "& Effective Python by Brett Slatkin", html.Br(),
+                    children=["Currently reading: The Data Detective by Tim Harford"
+                              #
                               "reading list:", html.Br(),
-                              "Animal Farm by George Orwell", html.Br(),
-                              "1989 by George Orwell", html.Br(),
+                              "Human Hacking by Chris Hadnagy with Seth Schulman", html.Br(),
                               'Grokking Algorithms by Aditya Bhargava', html.Br(),
                               'The Art of Doing Science and Engineering', html.Br(),
                               "Code by Charles Petzoid", html.Br(),
@@ -171,7 +189,8 @@ layout = html.Div([
                               "Hitch hikers guide to the Galaxy", html.Br(),
                               'Dune by Frank Herbert', html.Br(),
                               "Genius: The Life and Science of Richard Feynman by James Gleick", html.Br(),
-                              "Humankind: A hopeful History", html.Br()]
+                              "Humankind: A hopeful History", html.Br(),
+                              ]
                 )
                 , className="mb-4")
         ]),
@@ -179,6 +198,11 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(html.H5(
                 children=["Books I read:", html.Br(),
+                          "Writing to Persuade by Trish Hall", html.Br(),
+                          "Animal Farm &", html.Br(),
+                          "1989 by George Orwell", html.Br(),
+                          "Effective Python by Brett Slatkin", html.Br(),
+                          "Human Capabilities by Stuart Russell", html.Br(),
                           "Zero to One by Peter Thiel", html.Br(),
                           "Lifespan by David Sinclair", html.Br(),
                           "Do Androids Dream of Electric Sheep by Philip K. Dick", html.Br(),
@@ -199,11 +223,11 @@ layout = html.Div([
                           'Astrophysics for people in a hurry by Tyson', html.Br(),
                           'What do you care what other people think by Feynman', html.Br(),
                           'QED by Feynman', html.Br(),
-                          'Influence Science and Practice by Robert Cialdini', html.Br(),
+                          'Influence: Science and Practice by Robert Cialdini', html.Br(),
                           'Chaos by james gleick', html.Br(),
                           'The 7 Habits of highly effective people', html.Br(),
                           'Nine pints by Rose George', html.Br(),
-                          'The Grand Design ', html.Br(),
+                          'The Grand Design by Steven Hawking', html.Br(),
                           'Outliers', html.Br(),
                           'Sapiens', html.Br(),
                           "Surely You're Joking, Mr. Feynman!", html.Br(),

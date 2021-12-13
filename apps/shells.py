@@ -5,8 +5,6 @@ from plotly.subplots import make_subplots
 # Equation of ring cyclide
 # see https://en.wikipedia.org/wiki/Dupin_cyclide
 import numpy as np
-import dash_html_components as html
-import dash_bootstrap_components as dbc
 
 
 #fig = go.Figure() # or any Plotly Express function e.g. px.bar(...)
@@ -14,8 +12,9 @@ import dash_bootstrap_components as dbc
 # fig.update_layout( ... )
 
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
+import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
 
@@ -134,7 +133,7 @@ def update_figure(wave_freq,num_turns,height,wave_amp,pow):
                         )
 
     fig.add_trace(go.Surface(x=Fx, y=Fy, z=Fz, colorbar_x=-0.07), 1, 1)
-    #fig.add_trace(go.Surface(x=Fx, y=Fy, z=Fz, surfacecolor=x**2 + y**2 + z**2), 1, 2)
+    # fig.add_trace(go.Surface(x=Fx, y=Fy, z=Fz, surfacecolor=x**2 + y**2 + z**2), 1, 2)
     fig.update_layout(title_text="Ring cyclide")
     #fig.show()
 

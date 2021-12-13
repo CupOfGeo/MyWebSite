@@ -4,10 +4,11 @@ layout using the Navbar component and the supporting Nav, NavItem, NavLink,
 NavbarBrand, and NavbarToggler components.
 Requires dash-bootstrap-components 0.3.0 or later
 """
-import dash_core_components as dcc
 import dash
 import dash_bootstrap_components as dbc
-import dash_html_components as html
+from dash import dcc
+from dash import html
+
 from dash.dependencies import Input, Output, State
 from app import server
 from app import app
@@ -61,10 +62,12 @@ logo = dbc.Navbar(
                         dbc.Col(dbc.NavbarBrand("George Mazzeo", className="ml-2")),
                     ],
                     align="center",
-                    no_gutters=True,
+                    className="g-0"
                 ),
 
             ),
+
+
             dbc.NavbarToggler(id="navbar-toggler2"),
             dbc.Collapse(
                 dbc.Nav(
