@@ -177,19 +177,22 @@ layout = html.Div([
 
                 html.H5(
                     # The Annotated Turing by Charles Petzold
-                    children=["Currently reading: The Data Detective by Tim Harford"
+                    children=["Currently reading: Human Hacking by Chris Hadnagy with Seth Schulman", html.Br(),
                               #
                               "reading list:", html.Br(),
                               "Human Hacking by Chris Hadnagy with Seth Schulman", html.Br(),
-                              'Grokking Algorithms by Aditya Bhargava', html.Br(),
+                              # 'Grokking Algorithms by Aditya Bhargava', html.Br(),
                               'The Art of Doing Science and Engineering', html.Br(),
                               "Code by Charles Petzoid", html.Br(),
                               "Life 3.0 by Max Tegmark", html.Br(),
-                              'Superintelligence by nick bostrom', html.Br(),
-                              "Hitch hikers guide to the Galaxy", html.Br(),
-                              'Dune by Frank Herbert', html.Br(),
-                              "Genius: The Life and Science of Richard Feynman by James Gleick", html.Br(),
+                              'Superintelligence by Nick Bostrom', html.Br(),
+                              # "Hitch hikers guide to the Galaxy", html.Br(),
+                              # 'Dune by Frank Herbert', html.Br(),
+                              # "Genius: The Life and Science of Richard Feynman by James Gleick", html.Br(),
                               "Humankind: A hopeful History", html.Br(),
+                              "Winning by Jack Welch ", html.Br(),
+                              "Immunity by Philipp Dettmer", html.Br(),
+                              "The Book of Why by Judea Pearl", html.Br(),
                               ]
                 )
                 , className="mb-4")
@@ -198,6 +201,7 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(html.H5(
                 children=["Books I read:", html.Br(),
+                          "The Data Detective by Tim Harford", html.Br(),
                           "Writing to Persuade by Trish Hall", html.Br(),
                           "Animal Farm &", html.Br(),
                           "1989 by George Orwell", html.Br(),
