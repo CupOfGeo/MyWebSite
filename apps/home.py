@@ -19,8 +19,8 @@ layout = html.Div([
         ]),
         dbc.Row([
             dbc.Col(html.H5(
-                children="Welcome friends family and possible future friends. I'm back in New York had a wonderful "
-                         "time in Chicago! I hope you enjoy my work")
+                children="Welcome friends family and possible future friends. I moved to Austin and I'm loving it."
+                         " I hope you enjoy my work")
                 , className="mb-4")
         ]),
 
@@ -177,10 +177,10 @@ layout = html.Div([
 
                 html.H5(
                     # The Annotated Turing by Charles Petzold
-                    children=["Currently reading: Human Hacking by Chris Hadnagy with Seth Schulman", html.Br(),
+                    children=["Currently reading: Architecture Patterns with Python Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices by Bob Gregory Harry Percival", html.Br(),
                               #
                               "reading list:", html.Br(),
-                              "Human Hacking by Chris Hadnagy with Seth Schulman", html.Br(),
+                              "Words That Work: It's Not What You Say, It's What People Hear", html.Br(),
                               # 'Grokking Algorithms by Aditya Bhargava', html.Br(),
                               'The Art of Doing Science and Engineering', html.Br(),
                               "Code by Charles Petzoid", html.Br(),
@@ -201,6 +201,10 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(html.H5(
                 children=["Books I read:", html.Br(),
+                          "Microservice APIs by José Peralta", html.Br(),
+                          "Helgoland by Carlo Rovelli", html.Br(),
+                          "Bootstrapping Microservices with Docker, Kubernetes, and Terraform A project-based guide by Ashley Davis", html.Br(),
+                          "Human Hacking by Chris Hadnagy with Seth Schulman", html.Br(),
                           "The Data Detective by Tim Harford", html.Br(),
                           "Writing to Persuade by Trish Hall", html.Br(),
                           "Animal Farm &", html.Br(),
